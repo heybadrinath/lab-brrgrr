@@ -110,10 +110,10 @@ document.querySelector(".btn-cheese").onclick = function () {
 };
 
 // Trial 2 - Setup event listener for the tomatoes button
-document.querySelector(".btn-tomatoes").onclick = function () {
+document.querySelector(".btn-tomatoes").addEventListener("click", () => {
   state.Tomatoes = !state.Tomatoes;
   renderAll();
-};
+})
 
 // Trial 2 - Setup event listener for the onion button
 document.querySelector(".btn-onion").onclick = function () {

@@ -8,6 +8,8 @@ var bonion = document.querySelector(".btn-onions")
 var blettuce = document.querySelector(".btn-lettuce")
 
 var items = document.getElementsByClassName("items")
+var price = 0;
+var displayPrice = document.querySelector(".price-details");
 
 
 //Initial price of the burger
@@ -50,14 +52,11 @@ let patty = document.getElementById("patty");
 
   if (state.Patty) {
     patty.style.display = "inherit";
-    bPatty.classList.add("active")
-    items[0].textContent = "Patty"
+    
 
 
   } else {
     patty.style.display = "none";
-    bPatty.classList.remove("active")
-    items[0].textContent = ""
 
 
   }
@@ -69,14 +68,10 @@ function renderCheese() {
 
   if(state.Cheese) {
 	cheese.style.display = "inherit";
-  bcheese.classList.add("active")
-  items[1].textContent = "Cheese"
 
 
   }else{
 	cheese.style.display = "none";
-  bcheese.classList.remove("active")
-  items[1].textContent = ""
   }
   
 }
@@ -86,14 +81,10 @@ function renderTomatoes() {
   let tomatoes  = document.getElementById("tomato")  
   if (state.Tomatoes){
     tomatoes.style.display = "inherit"
-    btomato.classList.add("active")
-    items[2].textContent = "Tomatoes"
 
 
   } else {
     tomatoes.style.display = "none"
-    btomato.classList.remove("active")
-    items[2].textContent = ""
 
   } 
 }
@@ -104,14 +95,10 @@ function renderOnions() {
 
   if(state.Onions) {
 	onion.style.display = "inherit";
-  bonion.classList.add("active")
-  items[3].textContent = "Onions"
 
 
   }else{
 	onion.style.display = "none";
-  bonion.classList.remove("active")
-  items[3].textContent = ""
 
   }
 
@@ -123,18 +110,12 @@ function renderLettuce() {
 
   if (state.Lettuce){
     lettuce.style.display = "inherit"
-    blettuce.classList.add("active")
-    items[4].textContent = "Lettuce"
 
   } else {
     lettuce.style.display = "none"
-    blettuce.classList.remove("active")
-    items[4].textContent = ""
 
   } 
 }
-
-
 
 
 
@@ -172,10 +153,102 @@ blettuce.onclick = function () {
 
 //Challenge 1 - Add/Remove the class active to the buttons based on state
 
+function renderButtons() {
+  if(state.Patty) {
+    bPatty.classList.add("active")
+  } else {
+    bPatty.classList.remove("active")
+  }
+
+  if(state.Cheese) {
+    bcheese.classList.add("active")
+  } else {
+    bcheese.classList.remove("active")
+  }
+
+  if(state.Tomatoes) {
+    btomato.classList.add("active")
+  } else {
+    btomato.classList.remove("active")
+  }
+
+  if(state.Onions) {
+    bonion.classList.add("active")
+  } else {
+  bonion.classList.remove("active")
+  }
+
+  if(state.Lettuce) {
+    blettuce.classList.add("active")
+  } else {
+    blettuce.classList.remove("active")
+  }
+
+}
+
+
+
 
 //Challenge 2 - Render only the items selected in the ingredients board based on the state
+
+
+function renderIngredientsBoard() {
+  if(state.Patty) {
+    items[0].textContent = "Patty"
+  } else {
+    items[0].textContent = ""
+  }
+
+  if(state.Cheese) {
+  items[1].textContent = "Cheese"
+  } else {
+    items[1].textContent = ""
+  }
+
+  if(state.Tomatoes) {
+    items[2].textContent = "Tomatoes"
+  } else {
+    items[2].textContent = ""
+  }
+
+  if(state.Onions) {
+    items[3].textContent = "Onions"
+  } else {
+    items[3].textContent = ""
+  }
+
+  if(state.Lettuce) {
+    items[4].textContent = "Lettuce"
+  } else {
+    items[4].textContent = ""
+  }
+
+}
+
+
 
 
 //Judgement 1
 //In the p element having price-details as the class, display the calculated
 //price based on ingredients
+
+function renderPrice() {
+  price = 0;
+  if(state.Patty) {
+    price += 80
+  }
+  if(state.Cheese) {
+    price += 10
+  }
+  if (state.Tomatoes) {
+    price += 20
+  }
+  if (state.Onions) {
+    price += 20
+  }
+  if (state.Lettuce) {
+    price += 20
+  }
+
+  displayPrice.textContent = `INR ${price+10}`;
+}

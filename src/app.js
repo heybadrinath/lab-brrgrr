@@ -7,6 +7,8 @@ var btomato = document.querySelector(".btn-tomatoes")
 var bonion = document.querySelector(".btn-onions")
 var blettuce = document.querySelector(".btn-lettuce")
 
+var items = document.getElementsByClassName("items")
+
 
 //Initial price of the burger
 var wholeWheatBun = 10;
@@ -49,10 +51,14 @@ let patty = document.getElementById("patty");
   if (state.Patty) {
     patty.style.display = "inherit";
     bPatty.classList.add("active")
+    items[0].textContent = "Patty"
+
 
   } else {
     patty.style.display = "none";
     bPatty.classList.remove("active")
+    items[0].textContent = ""
+
 
   }
 }
@@ -64,11 +70,13 @@ function renderCheese() {
   if(state.Cheese) {
 	cheese.style.display = "inherit";
   bcheese.classList.add("active")
+  items[1].textContent = "Cheese"
+
 
   }else{
 	cheese.style.display = "none";
   bcheese.classList.remove("active")
-
+  items[1].textContent = ""
   }
   
 }
@@ -79,10 +87,13 @@ function renderTomatoes() {
   if (state.Tomatoes){
     tomatoes.style.display = "inherit"
     btomato.classList.add("active")
+    items[2].textContent = "Tomatoes"
+
 
   } else {
     tomatoes.style.display = "none"
     btomato.classList.remove("active")
+    items[2].textContent = ""
 
   } 
 }
@@ -94,10 +105,13 @@ function renderOnions() {
   if(state.Onions) {
 	onion.style.display = "inherit";
   bonion.classList.add("active")
+  items[3].textContent = "Onions"
+
 
   }else{
 	onion.style.display = "none";
   bonion.classList.remove("active")
+  items[3].textContent = ""
 
   }
 
@@ -110,9 +124,13 @@ function renderLettuce() {
   if (state.Lettuce){
     lettuce.style.display = "inherit"
     blettuce.classList.add("active")
+    items[4].textContent = "Lettuce"
+
   } else {
     lettuce.style.display = "none"
     blettuce.classList.remove("active")
+    items[4].textContent = ""
+
   } 
 }
 

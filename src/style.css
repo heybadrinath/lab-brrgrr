@@ -132,8 +132,8 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 10%;
-    bottom: 10%;
+    right: 0%;
+    bottom: 0%;
     width: 450px;
     height: 179px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
